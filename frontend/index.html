@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>GadgetCart | Phone Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="order-card" aria-labelledby="page-title">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="img" aria-label="Phone icon"><rect x="12" y="4" width="24" height="40" rx="5"/><path d="M19 9h10M21 38h6"/></svg>
+      </div>
+      <p class="eyebrow">GADGETCART · SECURE CHECKOUT</p>
+      <h1 id="page-title">Phone Order</h1>
+      <p class="subtitle">A little upgrade, just a few details away.</p>
+
+      <form id="orderForm">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required></div>
+        <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" inputmode="numeric" placeholder="Enter phone number" pattern="[0-9+()\s-]{7,18}" autocomplete="tel" required></div>
+        <div class="field"><label for="product">Phone Model</label><select id="product" name="product" required><option value="Samsung S24">Samsung S24</option><option value="iPhone 15">iPhone 15</option><option value="Google Pixel 8">Google Pixel 8</option><option value="OnePlus 12">OnePlus 12</option></select></div>
+        <div class="field"><label for="quantity">Quantity</label><input id="quantity" name="quantity" type="number" min="1" max="99" value="1" required></div>
+        <div class="field"><label for="payment_method">Payment Method</label><select id="payment_method" name="payment_method"><option value="Card">Card</option><option value="UPI">UPI</option><option value="Cash on Delivery">Cash on Delivery</option></select></div>
+        <button type="submit"><span>Place Order</span><span aria-hidden="true">→</span></button>
+      </form>
+      <div id="result" class="result" role="status" aria-live="polite"></div>
+      <p class="secure-note"><span aria-hidden="true">✦</span> Simple checkout · Order confirmation</p>
+    </section>
+    <footer>GadgetCart <span>•</span> Your next favorite device.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

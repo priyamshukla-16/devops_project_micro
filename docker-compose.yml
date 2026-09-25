@@ -1,0 +1,24 @@
+services:
+
+  payment-service:
+    build: ./payment-service
+    container_name: payment-container
+    ports:
+      - "5002:5002"
+
+  order-service:
+    build: ./order-service
+    container_name: order-container
+    ports:
+      - "5001:5001"
+    depends_on:
+      - payment-service
+      
+
+  frontend:
+    build: ./frontend
+    container_name: ecommerce-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - order-service
