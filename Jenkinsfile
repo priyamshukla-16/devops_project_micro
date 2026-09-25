@@ -15,12 +15,15 @@ pipeline {
             }
         }
 
-        stage('Docker Run') {
-            steps {
-                echo 'Starting Docker containers...'
-                bat 'docker-compose up -d'
-            }
-        }
+       stage('Docker Run') {
+    steps {
+        echo 'Stopping old containers...'
+        bat 'docker-compose down --remove-orphans'
+
+        echo 'Starting Docker containers...'
+        bat 'docker-compose up -d'
+    }
+}
 
         stage('Check Containers') {
             steps {
